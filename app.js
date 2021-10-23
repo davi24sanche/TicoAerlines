@@ -20,7 +20,7 @@ const userRouter = require("./routes/user");
 dotEnv.config();
 
 // definimos el uri de la base de datos definido en el archivo .env
-const mongoDB = process.env.MONGODB_DATABASE;
+const mongoDB = "mongodb://localhost:27017/TicoAirlines";
 
 // se conecta a la base de datos
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });

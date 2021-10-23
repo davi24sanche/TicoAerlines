@@ -13,6 +13,7 @@ module.exports.signup = async (req, res, next) => {
         res.json({ success: false, msg: 'Por favor digíte su usuario y su contraseña' });
     } else {
         var newUser = new UserModel({ username: username, password: password });
+        console.log(newUser);
         // save the user
         newUser.save(function (err) {
             if (err) {
@@ -40,7 +41,7 @@ module.exports.signin = async (req, res, next) => {
             if (isMatch && !err) {
                 // Si el usuario es correcto y la contraseña coindice se procede a crear el TOKEN
                 const token = jwt.sign({ "username": username}, 
-                                         config.SECRETWORDJWT, 
+                                         "dfgdfadrhtdzfbsfrfssbrsrbesrvvvhgsadfgbaertergdn", 
                                          { expiresIn: "2h"}
                                        );
                 // retorna la informacion incluyendo el token en formato json
