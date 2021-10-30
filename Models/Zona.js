@@ -1,11 +1,11 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require('bcrypt-nodejs');
 
-const RuteSchema = new Schema({
+const zonaSchema = new Schema({
     descripcion: {
       type: String,
       required: true,
     },
   });
-  const RuteModel = model("Zona", RuteSchema);
-  module.exports = RuteModel;
+  const zonaModel = model("Zona", zonaSchema);
+  module.exports = zonaModel;

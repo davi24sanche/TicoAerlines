@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const RutaModel = require("../models/Zona");
+const zonaModel = require("../models/Zona");
 const controller = require("../controllers/zonaController");
 
 router.get("/", controller.get);

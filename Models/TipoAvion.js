@@ -4,7 +4,7 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require('bcrypt-nodejs');
 
-const UserSchema = new Schema({
+const tipoAvionSchema = new Schema({
   id: {
     type: Number,
     required: true,
@@ -27,6 +27,6 @@ const UserSchema = new Schema({
   },
 });
 
-const UserModel = model("TipoAvion", UserSchema);
+const tipoAvionModel = model("TipoAvion", tipoAvionSchemaSchema);
 
-module.exports = UserModel;
+module.exports = tipoAvionSchemaModel;

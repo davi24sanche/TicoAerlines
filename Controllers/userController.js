@@ -55,3 +55,37 @@ module.exports.signin = async (req, res, next) => {
     }
 };
 
+//Se obtiene el usuario
+module.exports.get = async (req, res, next) =>{
+    const avion = await UserModel.find().exec();
+    res.json(avion)
+}
+
+//Se obtiene el usuario por el ID
+module.exports.getById = async (req, res, next) => {
+    const id = req.params.id;
+    const ruta = await UserModel.findById(id).exec();
+    res.json(ruta);
+};
+
+//Se elimina el usuario
+module.exports.delete = async (req, res, next) => {
+    const ruta = await UserModel.findByIDAndRemove(req.params.id);
+    if (ruta) {
+      res.json({ result: "Usuario borrado correctamente", post: ruta });
+    } else {
+      res.json({ result: "Id del usuario invalido", post: ruta });
+    }
+  };
+
+  //Se actualiza el usuario
+  module.exports.update = async (req, res, next) => {
+    const { name, info } = req.body;
+    const ruta = await UserModel.findOneAndUpdate(
+      { _id: req.params.id },
+      { username, password}, // ==> {title: title, body: body}
+      { new: true } // retornar el registro que hemos modificado con los nuevos valores
+    );
+    res.json(zona);
+  };
+
