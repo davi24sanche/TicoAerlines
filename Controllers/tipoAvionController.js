@@ -1,4 +1,4 @@
-const UserModel = require("../models/TipoAvion");
+const TipoAvionModel = require("../models/TipoAvion");
 const jwt = require('jsonwebtoken');
 
 //Se obtienen las variables de entorno
@@ -12,7 +12,7 @@ module.exports.saveTipoAvion = async (req, res, next) => {
     if (id==null || anio==null || modelo==null || marca==null || cant_Filas==null || cant_Asientos==null) {
         res.json({ success: false, msg: 'Por favor digíte llenas los campos' });
     } else {
-        var newTipo = new UserModel({ id: id, anio: anio, modelo: modelo, marca: marca, cant_Filas: cant_Filas, cant_Asientos: cant_Asientos });
+        var newTipo = new TipoAvionModel({ id: id, anio: anio, modelo: modelo, marca: marca, cant_Filas: cant_Filas, cant_Asientos: cant_Asientos });
         console.log(newTipo);
         // save the user
         newTipo.save(function (err) {
