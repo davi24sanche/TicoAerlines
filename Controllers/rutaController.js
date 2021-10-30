@@ -11,7 +11,7 @@ module.exports.create = async (req, res, next) => {
     const ruta = new RuteModel({ horario, descripcion, duracion, precio });
     console.log(ruta);
     ruta.save();
-    res.json(author)   
+    res.json(ruta)   
 };
 
 module.exports.get = async (req, res, next) =>{

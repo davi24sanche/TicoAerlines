@@ -57,6 +57,7 @@ app.use(
 //app.use("/author/", authorRouter);
 app.use("/user/", userRouter);
 app.use("/tipoAvion/", tipoAvionRouter);
+app.use("/ruta/", rutaRouter);
 
 
 // iniciamos nuestro servidor
