@@ -17,7 +17,7 @@ const passport = require('passport');
 const userRouter = require("./routes/user");
 const tipoAvionRouter = require("./routes/tipoAvion");
 const rutaRouter = require("./routes/ruta");
-const rutaRouter = require("./routes/avion");
+const avionRouter = require("./routes/avion");
 
 // esta linea ayuda a leer la configuracion que tenemos en el archivo .env
 dotEnv.config();
@@ -59,6 +59,7 @@ app.use(
 app.use("/user/", userRouter);
 app.use("/tipoAvion/", tipoAvionRouter);
 app.use("/ruta/", rutaRouter);
+app.use("/avion/", avionRouter);
 
 
 // iniciamos nuestro servidor

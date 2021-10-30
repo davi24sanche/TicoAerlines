@@ -3,11 +3,11 @@ const bcrypt = require('bcrypt-nodejs');
 
 const RuteSchema = new Schema({
     ID_Ruta: {
-      type: int,
+      type: Number,
       required: true,
     },
     ID_TipoAvion: {
-      type: int,
+      type: Number,
       required: true,
     },
   });
