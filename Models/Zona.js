@@ -2,14 +2,10 @@ const { Schema, model } = require("mongoose");
 const bcrypt = require('bcrypt-nodejs');
 
 const RuteSchema = new Schema({
-    ID_Ruta: {
-      type: Number,
+    descripcion: {
+      type: String,
       required: true,
     },
-    ID_Ruta: {
-        type: Image,
-        required: true,
-      },
   });
   const RuteModel = model("Zona", RuteSchema);
   module.exports = RuteModel;

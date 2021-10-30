@@ -6,12 +6,12 @@ const config = process.env;
 
 // Se crean las nuevas zonas
 module.exports.save = async (req, res, next) => {
-    const { descripcion, imagen } = req.body;
+    const { descripcion} = req.body;
     console.log(req.body);
-    if (descripcion ==null || imagen ==null) {
+    if (descripcion ==null) {
         res.json({ success: false, msg: 'Por favor llené los campos' });
     } else {
-        var newZona = new TipoAvionModel({ descripcion: descripcion, imagen: imagen });
+        var newZona = new TipoAvionModel({ descripcion: descripcion});
         console.log(newZona);
         newTipo.save(function (err) {
             if (err) {
@@ -50,7 +50,7 @@ module.exports.delete = async (req, res, next) => {
     const { name, info } = req.body;
     const ruta = await ZonaModel.findOneAndUpdate(
       { _id: req.params.id },
-      { descripcion, imagen}, // ==> {title: title, body: body}
+      { descripcion}, // ==> {title: title, body: body}
       { new: true } // retornar el registro que hemos modificado con los nuevos valores
     );
     res.json(zona);

@@ -6,6 +6,7 @@ const chalk = require("chalk");
 const mongoose = require("mongoose");
 const app = express();
 const passport = require('passport');
+const dotenv= require("dotenv");
 
 //instalación de paquetes para passport
 //npm install  bcrypt-nodejs jsonwebtoken  passport passport-jwt --save
@@ -18,12 +19,14 @@ const userRouter = require("./routes/user");
 const tipoAvionRouter = require("./routes/tipoAvion");
 const rutaRouter = require("./routes/ruta");
 const avionRouter = require("./routes/avion");
+const zonaRouter = require("./routes/zona");
+
 
 // esta linea ayuda a leer la configuracion que tenemos en el archivo .env
-dotEnv.config();
+dotenv.config();
 
 // definimos el uri de la base de datos definido en el archivo .env
-const mongoDB = "mongodb://localhost:27017/TicoAirlines";
+const mongoDB = process.env.MONGODB_DATABASE;
 
 // se conecta a la base de datos
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -60,6 +63,7 @@ app.use("/user/", userRouter);
 app.use("/tipoAvion/", tipoAvionRouter);
 app.use("/ruta/", rutaRouter);
 app.use("/avion/", avionRouter);
+app.use("/zona/", avionRouter);
 
 
 // iniciamos nuestro servidor
