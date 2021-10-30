@@ -7,9 +7,8 @@ const RuteSchema = new Schema({
       required: true,
     },
     ID_TipoAvion: {
-      type: Number,
+      type:  [{ type: String, ref: "tipoAvion" }],
       required: true,
     },
   });
-  const RuteModel = model("Avion", RuteSchema);
-  module.exports = RuteModel;
+  module.exports = model("Avion", RuteSchema);
