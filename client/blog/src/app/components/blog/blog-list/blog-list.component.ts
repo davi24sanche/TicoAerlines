@@ -7,9 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogListComponent implements OnInit {
 
+  posts = [
+    {
+      title: 'My first Blog Post',
+      body: 'Lorem ipsum dolor sit amet, consectetur adip',
+      author: {
+        name: 'John Smith',
+      },
+    },
+    {
+      title: 'My second Blog Post',
+      body: 'Lorem ipsum dolor sit amet, consectetur adip',
+      author: {
+        name: 'Shakespeare',
+      },
+    },
+    {
+      title: 'My third Blog Post',
+      body: 'Lorem ipsum dolor sit amet, consectetur adip',
+      author: {
+        name: 'Anabelle',
+      },
+    },
+  ];
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

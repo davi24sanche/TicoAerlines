@@ -1,5 +1,10 @@
 Para abrir el angular
 http://localhost:4200/
 
+http://localhost:4200/blog
+
 *ngfor
 *ngif
+
+Comandos
+ng serve // para que compile el trabajo
