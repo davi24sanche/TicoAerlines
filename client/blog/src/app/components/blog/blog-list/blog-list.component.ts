@@ -9,21 +9,21 @@ export class BlogListComponent implements OnInit {
 
   posts = [
     {
-      title: 'My first Blog Post',
+      title: 'Vuelo CopaArlines AC-102',
       body: 'Lorem ipsum dolor sit amet, consectetur adip',
       author: {
-        name: 'John Smith',
+        name: 'Jamaica',
       },
     },
     {
-      title: 'My second Blog Post',
+      title: 'Vuelo AirBus A-500',
       body: 'Lorem ipsum dolor sit amet, consectetur adip',
       author: {
-        name: 'Shakespeare',
+        name: 'Las Vegas',
       },
     },
     {
-      title: 'My third Blog Post',
+      title: 'Vuelo CopaArlines AC-102',
       body: 'Lorem ipsum dolor sit amet, consectetur adip',
       author: {
         name: 'Anabelle',
