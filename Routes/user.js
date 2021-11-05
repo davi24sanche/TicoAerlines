@@ -3,6 +3,10 @@ const router = express.Router();
 const UserModel = require("../models/User");
 const controller = require("../controllers/userController");
 
+//Autenticación para el uso del API
+const auth = require("../middleware/auth");
+const { permit } = require("../middleware/authorization");
+
 router.get("/", controller.get);
 
 router.get("/:id", controller.getById);
