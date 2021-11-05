@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RutaService } from '../../../services/rutas.service';
 
 @Component({
   selector: 'app-blog-list',
@@ -7,32 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogListComponent implements OnInit {
 
-  posts = [
-    {
-      title: 'Vuelo CopaArlines AC-102',
-      body: 'Lorem ipsum dolor sit amet, consectetur adip',
-      author: {
-        name: 'Jamaica',
-      },
-    },
-    {
-      title: 'Vuelo AirBus A-500',
-      body: 'Lorem ipsum dolor sit amet, consectetur adip',
-      author: {
-        name: 'Las Vegas',
-      },
-    },
-    {
-      title: 'Vuelo CopaArlines AC-102',
-      body: 'Lorem ipsum dolor sit amet, consectetur adip',
-      author: {
-        name: 'Anabelle',
-      },
-    },
-  ];
+  rutas = <any>[];
+  constructor(private rutasService: RutaService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.rutasService.get().subscribe((rutas)=>{this.rutas  = rutas});
+    console.log("paso por aca");
+    console.log(this.rutas);
+  }
 }

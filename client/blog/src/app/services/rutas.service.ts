@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders,HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 //URL del API para la gestión de posts
-const AUTH_API = 'http://localhost:8989/posts/';
+const AUTH_API = 'http://localhost:8989/ruta/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -12,7 +12,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class RutaService {
 
   constructor(private http: HttpClient) { }
 

@@ -8,3 +8,33 @@ http://localhost:4200/blog
 
 Comandos
 ng serve // para que compile el trabajo
+
+
+//////
+posts = [
+    {
+      title: 'Vuelo CopaArlines AC-102',
+      body: 'Lorem ipsum dolor sit amet, consectetur adip',
+      author: {
+        name: 'Jamaica',
+      },
+    },
+    {
+      title: 'Vuelo AirBus A-500',
+      body: 'Lorem ipsum dolor sit amet, consectetur adip',
+      author: {
+        name: 'Las Vegas',
+      },
+    },
+    {
+      title: 'Vuelo CopaArlines AC-102',
+      body: 'Lorem ipsum dolor sit amet, consectetur adip',
+      author: {
+        name: 'Anabelle',
+      },
+    },
+  ];
+
+  constructor() { }
+
+  ngOnInit(): void {}

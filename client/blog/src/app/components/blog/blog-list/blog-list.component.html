@@ -1,15 +1,15 @@
-<div *ngFor="let post of posts">
+<div *ngFor="let post of rutas">
     <div class="post-preview">
       <a href="post.html">
         <h2 class="post-title">
-         {{post.title}}
+         {{post.descripcion}}
         </h2>
         <h3 class="post-subtitle">
-         {{post.body}}
+         {{post.horario}}
         </h3>
       </a>
       <p class="post-meta">
-        Author: {{post.author.name}}    
+        Precio: {{post.author.precio}}    
       </p>
     </div>
     <!-- Divider-->
