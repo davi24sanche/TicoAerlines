@@ -1,0 +1,24 @@
+
+header{   
+    background-color: rgb(7, 7, 7);  
+}
+.masthead{ 
+    color: rgb(252, 252, 252);
+    height: 440px;
+    margin: auto;  
+}
+
+nav{
+    height: 11%;
+    border: solid;
+     border-color: rgb(58, 8, 114);
+}
+
+header #myCarousel{
+    border: solid;
+    border-color: rgb(60, 20, 151);
+}
+
+.slide .carousel-inner .active>img {
+    height: 350px;
+}
