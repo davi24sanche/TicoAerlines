@@ -11,4 +11,4 @@ const AvionSchema = new Schema({
       required: true,
     },
   });
-  module.exports = model("Avion", AvionSchemaSchema);
+  module.exports = model("Avion", AvionSchema);

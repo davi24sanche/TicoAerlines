@@ -27,6 +27,6 @@ const tipoAvionSchema = new Schema({
   },
 });
 
-const tipoAvionModel = model("TipoAvion", tipoAvionSchemaSchema);
+const tipoAvionModel = model("TipoAvion", tipoAvionSchema);
 
-module.exports = tipoAvionSchemaModel;
+module.exports = tipoAvionModel;

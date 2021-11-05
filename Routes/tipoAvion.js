@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const TipoAvionModel = require("../models/TipoAvion");
-const userController = require("../controllers/tipoAvionController");
+const avionController = require("../controllers/tipoAvionController");
 
-router.post("/", userController.saveTipoAvion);
+router.post("/", avionController.create);
 
 
 

@@ -7,7 +7,9 @@ router.get("/", controller.get);
 
 router.get("/:id", controller.getById);
 
-router.post("/", controller.save);
+router.post("/", controller.signup);
+
+router.post("/", controller.signin);
 
 router.delete("/:id", controller.delete);
 

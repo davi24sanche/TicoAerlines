@@ -6,7 +6,7 @@ const config = process.env;
 
 // Se crean los nuevos tipos de avion
 
-module.exports.saveTipoAvion = async (req, res, next) => {
+module.exports.create = async (req, res, next) => {
     const { id, anio, modelo, marca, cant_Filas, cant_Asientos } = req.body;
     console.log(req.body);
     if (id==null || anio==null || modelo==null || marca==null || cant_Filas==null || cant_Asientos==null) {
