@@ -41,7 +41,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error"));
 db.once("open", () => console.log("Connected Successfully to DB " + mongoDB));
 
 // se define el puerto que va a escuchar basado en el archivo de configuración .env
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 // usamos el middleware cors para aceptar llamadas cors en nuestro servidor
 app.use(cors());

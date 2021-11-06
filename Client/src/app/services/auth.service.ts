@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders,HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 //URL del endpoind de usuarios
-const AUTH_API = 'http://localhost:8989/user/';
+const AUTH_API = 'http://localhost:8080/user/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -18,7 +18,7 @@ export class AuthService {
 
   //Se implementar el servicio con el objeto HttpClient
   login(username: string, password: string): Observable<any> {
-    return this.http.post(AUTH_API + 'signin', {
+    return this.http.post(AUTH_API, {
       username,
       password
     }, httpOptions);
@@ -26,7 +26,7 @@ export class AuthService {
 
   //Se implementar el servicio con el objeto HttpClient
   register(username: string , password: string): Observable<any> {
-    return this.http.post(AUTH_API + 'signup', {
+    return this.http.post(AUTH_API, {
       username,
       password
     }, httpOptions);
