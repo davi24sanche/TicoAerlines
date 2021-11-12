@@ -4,16 +4,21 @@ const RuteModel = require("../models/Rutas");
 const config = process.env;
 
 // Se crean las nuevas rutas
-
 module.exports.create = async (req, res, next) => {
     const { horario, descripcion, duracion, precio} = req.body;
-    console.log(req.body);  
+    if(horario=null || descripcion==null || duracion==null || precio==null || horario.isEmpty() || descripcion.isEmpty()  || duracion.isEmpty()  || precio.isEmpty() ){
+      res.json({sucess:false,msg:"Debe rellenar todos los campos"});
+    }
+    else{
+    console.log(req.body);
     const ruta = new RuteModel({ horario, descripcion, duracion, precio });
-    console.log(ruta); 
+      console.log(ruta);
     ruta.save().catch((error)=>{
-    console.log(error)
+      res.json({"error al crear ruta":error});
+      console.log(error);
     });
-    res.json(ruta)   
+    }
+    res.json(ruta)
 };
 
 module.exports.get = async (req, res, next) =>{
@@ -30,7 +35,7 @@ module.exports.getById = async (req, res, next) => {
 };
 
 module.exports.delete = async (req, res, next) => {
-  
+
     const ruta = await RuteModel.findByIdAndRemove(req.params.id).exec();
     // si post es null significa que no existe el registro
     if (ruta) {
@@ -39,7 +44,7 @@ module.exports.delete = async (req, res, next) => {
       res.json({ result: "Id de la ruta invalida", post: ruta });
     }
   };
-  
+
   module.exports.update = async (req, res, next) => {
     const { name, info } = req.body;
     const ruta = await RuteModel.findOneAndUpdate(

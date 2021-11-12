@@ -8,7 +8,7 @@ const config = process.env;
 module.exports.save = async (req, res, next) => {
     const { descripcion} = req.body;
     console.log(req.body);
-    if (descripcion ==null) {
+    if (descripcion ==null || descripcion.isEmpty()) {
         res.json({ success: false, msg: 'Por favor llené los campos' });
     } else {
         var newZona = new TipoAvionModel({ descripcion: descripcion});

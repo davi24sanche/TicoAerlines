@@ -8,7 +8,7 @@ const config = process.env;
 module.exports.save = async (req, res, next) => {
     const { ID_ZonaOrigen, ID_ZonaDestino, descripcion, ID_Ruta, ID_Avion} = req.body;
     console.log(req.body);
-    if (ID_ZonaOrigen ==null || ID_ZonaDestino ==null || descripcion ==null || ID_Ruta== null || ID_Avion== null) {
+    if (ID_ZonaOrigen ==null || ID_ZonaDestino ==null || descripcion ==null || ID_Ruta== null || ID_Avion== null || ID_ZonaOrigen.isEmpty() || ID_ZonaDestino.isEmpty() || descripcion.isEmpty() || ID_Ruta.isEmpty() || ID_Avion.isEmpty()) {
         res.json({ success: false, msg: 'Por favor llené los campos' });
     } else {
         var newVuelo = new vueloModel({ ID_ZonaOrigen: ID_ZonaOrigen, ID_ZonaDestino: ID_ZonaDestino, descripcion: descripcion, ID_Ruta: ID_Ruta, ID_Avion: ID_Avion});

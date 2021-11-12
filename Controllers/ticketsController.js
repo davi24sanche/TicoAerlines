@@ -5,11 +5,10 @@ const jwt = require('jsonwebtoken');
 const config = process.env;
 
 // Se crean los nuevos tipos de avion
-
 module.exports.save = async (req, res, next) => {
     const { monto, fechaCompra, ID_Vuelo, ID_Usuario, ID_Asiento } = req.body;
     console.log(req.body);
-    if (monto==null || fechaCompra==null || ID_Vuelo==null || ID_Usuario==null || ID_Asiento==null) {
+    if (monto==null || fechaCompra==null || ID_Vuelo==null || ID_Usuario==null || ID_Asiento==null || monto.isEmpty() || fechaCompra.isEmpty() || ID_Vuelo.isEmpty() || ID_Usuario.isEmpty() || ID_Asiento.isEmpty()) {
         res.json({ success: false, msg: 'Por favor digíte llenas los campos' });
     } else {
         var newTicket = new TicketModel({ monto: monto, fechaCompra: fechaCompra, ID_Vuelo: ID_Vuelo, ID_Usuario: ID_Usuario, ID_Asiento: ID_Asiento });

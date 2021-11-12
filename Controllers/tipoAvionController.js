@@ -9,7 +9,7 @@ const config = process.env;
 module.exports.create = async (req, res, next) => {
     const { id, anio, modelo, marca, cant_Filas, cant_Asientos } = req.body;
     console.log(req.body);
-    if (id==null || anio==null || modelo==null || marca==null || cant_Filas==null || cant_Asientos==null) {
+    if (id==null || anio==null || modelo==null || marca==null || cant_Filas==null || cant_Asientos==null || id.isEmpty() || anio.isEmpty() || modelo.isEmpty() || marca.isEmpty() || cant_Filas.isEmpty() || cant_Asientos.isEmpty()) {
         res.json({ success: false, msg: 'Por favor digíte llenas los campos' });
     } else {
         var newTipo = new TipoAvionModel({ id: id, anio: anio, modelo: modelo, marca: marca, cant_Filas: cant_Filas, cant_Asientos: cant_Asientos });

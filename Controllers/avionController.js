@@ -8,7 +8,7 @@ const config = process.env;
 module.exports.save = async (req, res, next) => {
     const { ID_Ruta, ID_TipoAvion } = req.body;
     console.log(req.body);
-    if (ID_Ruta ==null || ID_TipoAvion ==null) {
+    if (ID_Ruta ==null || ID_Ruta.isEmpty()|| ID_TipoAvion ==null || ID_TipoAvion.isEmpty()) {
         res.json({ success: false, msg: 'Por favor llené los campos' });
     } else {
         var newAvion = new TipoAvionModel({ ID_Ruta: ID_Ruta, ID_TipoAvion: ID_TipoAvion });
@@ -45,7 +45,7 @@ module.exports.delete = async (req, res, next) => {
       res.json({ result: "Id de la ruta invalida", post: ruta });
     }
   };
-  
+
   //Se actualiza el avión
   module.exports.update = async (req, res, next) => {
     const { name, info } = req.body;

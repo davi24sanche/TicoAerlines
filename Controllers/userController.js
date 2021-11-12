@@ -6,7 +6,6 @@ const config = process.env;
 
 
 // Se crean los nuevos usuarios
-
 module.exports.signup = async (req, res, next) => {
     const { username, password } = req.body;
     if (!username || !password) {
@@ -40,8 +39,8 @@ module.exports.signin = async (req, res, next) => {
         user.comparePassword(password, user.password, function (err, isMatch) {
             if (isMatch && !err) {
                 // Si el usuario es correcto y la contraseña coindice se procede a crear el TOKEN
-                const token = jwt.sign({ "username": username}, 
-                                         "dfgdfadrhtdzfbsfrfssbrsrbesrvvvhgsadfgbaertergdn", 
+                const token = jwt.sign({ "username": username},
+                                         "dfgdfadrhtdzfbsfrfssbrsrbesrvvvhgsadfgbaertergdn",
                                          { expiresIn: "2h"}
                                        );
                 // retorna la informacion incluyendo el token en formato json
